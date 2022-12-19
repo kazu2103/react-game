@@ -1,7 +1,7 @@
 import { Box, Button, Text } from "native-base";
 import { useState } from "react";
 import { TouchableHighlight } from "react-native";
-import { messages, messageTextBuilder, MessageType } from "../../domain/Message";
+import { messages, messageTextBuilder, MessageType } from "../domains/Message";
 
 
 

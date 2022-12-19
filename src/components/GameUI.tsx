@@ -1,8 +1,10 @@
+import { Command } from "../domains/Command";
 import { AspectRatio, Box, Center, Heading, HStack, Image, NativeBaseProvider, Stack, Text } from "native-base";
 import { Component, useState } from "react"
 import { StyleSheet, Touchable, TouchableHighlight, View } from "react-native";
-import GameImage from "./GameImage";
-import StoryUI from "./ui/StoryUI";
+import HomeScreen from "../screens/HomeScreen";
+import PictureDisplay from "../screens/PictureDisplay";
+import StoryUI from "../screens/StoryUI";
 
 interface GameUIProps {
 
@@ -12,28 +14,36 @@ const GameUI = ({
 
 }: GameUIProps): JSX.Element => {
   const [isBattle, setIsBattle] = useState<boolean>(false);
+  const commands= [
+    new Command("command1", () => {console.log("command1")}),
+    new Command("command2", () => {console.log("command2")}),
+  ]
 
   return (
-    <Stack
-      direction="column"
-      mb="2.5"
-      mt="5"
-      bg="white"
-    >
-      {/* Image */}
-        <GameImage />
-      { /* UI */
-        isBattle && (
-          <StoryUI />
-        )
-      }
-      { /* Text */
-        !isBattle && (
-          <StoryUI />
-        )
-      }
-      
-    </Stack>
+    <View>
+      <Stack
+        direction="column"
+        mb="2.5"
+        mt="5"
+        bg="white"
+      >
+        {/* Image */}
+          <PictureDisplay />
+        { /* UI */
+          isBattle && (
+            <StoryUI />
+          )
+        }
+        { /* Text */
+          !isBattle && (
+            <HomeScreen
+              commands={commands}
+            />
+          )
+        }
+        
+      </Stack>
+    </View>
   );
 };
 

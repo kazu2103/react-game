@@ -8,7 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint --ext 'src/**/*.{js,jsx,ts,tsx}'",
-    "format": "eslint --cache --fix 'src/**/*.{js,jsx,ts,tsx}' && prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
+    "format": "eslint --cache --fix 'src/**/*.{js,jsx,ts,tsx}' && prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "storybook": "start-storybook -p 7007",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "eslint": "^8.0.1",
@@ -27,9 +29,17 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.26",
+    "@storybook/react-native": "^5.3.27",
+    "@storybook/react-native-server": "^5.3.23",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.70.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "babel-loader": "^8.3.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
